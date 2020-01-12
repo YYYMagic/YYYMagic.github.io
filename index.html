@@ -233,6 +233,156 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/12/毕设2-双目实时稠密重建思路整理/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="YYY">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yyy's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/12/毕设2-双目实时稠密重建思路整理/" itemprop="url">毕设2-双目实时稠密重建思路整理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-12T12:30:17+08:00">
+                2020-01-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h1><ol>
+<li><p>目前orbslam已经非常成熟，但是该框架只能做稀疏重建，</p>
+</li>
+<li><p>github上有基于viso2的里程计以及elas的深度恢复的开源项目，该项目目前可以跑开源KITTTI数据集，目前改成了zed实时模式但是还没有测试，另外后面最好改成ROS节点形式，方便从rosbag直接读取数据</p>
+</li>
+<li><p>elasticfusion是效果比较好的rgbd相机实时稠密重建方案，可以实现实时生成mesh</p>
+</li>
+</ol>
+<h1 id="三个思路"><a href="#三个思路" class="headerlink" title="三个思路"></a>三个思路</h1><ol>
+<li><p>思路1：基于orbslam</p>
+<p> 把ormslam的mapping模块替换为开源项目的mapping，框架也需要改变，最终把稀疏改为稠密</p>
+</li>
+<li><p>思路二：基于开源项目</p>
+<p> 开源项目可以实现实时点云，但存在两个问题，一个是viso里程计较老、效果较差；一个是只能到点云无法到mesh</p>
+<p> 解决方案是用orbslam的里程计替换viso，另外需要pcl编程实现点云到mesh</p>
+</li>
+<li><p>思路三：基于elasticfusion</p>
+<p> 只需要将elasticfusion的输入由rgbd变成双目即可，这就需要将开源项目的elas模块导入，由elas计算深度作为输入。</p>
+<p> 最后需要修改代码实现，前期可以研究一下 rosbag-&gt;数据集-&gt;elasticfusion读取 的方式</p>
+</li>
+</ol>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>综合来看由1到3难度递减，思路三是目前可行性最高的方案。</p>
+<p>接下来等新电脑到了以后开始进行思路三的落地，步骤如下：</p>
+<ol>
+<li>装ubuntu</li>
+<li>安装ROS，安装QT</li>
+<li>安装elasticfusion并用数据集进行测试，接着用realsense的rosbag包测试</li>
+<li>安装显卡驱动，配置cuda，配置zed环境</li>
+<li>尝试zed的rosbag包转为数据集格式</li>
+<li>尝试直接修改代码将输入改为双目</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/30/拿到offer/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1312,7 +1462,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1369,7 +1519,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
