@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="3月要入职了，有点小激动。">
+<meta name="description" content="切片比数组的方便之处在于其长度可变，在append超出cap时可自动扩容，一次性扩充大小和具体情况有关，我测试的结果是每次扩容先×2，还不够则再线性增长 关于slice有两个注意点 slice的初始化问题12var arr = []int &amp;#123;0, 1, 2, 3, 4, 5, 6&amp;#125;s1 := arr[0, 4] 注意这里s1初始化后为0, 1, 2, 3slice这种方式初始化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深夜有感">
-<meta property="og:url" content="http://yoursite.com/2020/02/29/深夜有感/index.html">
+<meta property="og:title" content="Golang: slice切片的坑">
+<meta property="og:url" content="http://yoursite.com/2020/03/06/Golang-slice切片的坑/index.html">
 <meta property="og:site_name" content="yyy&#39;s Blog">
-<meta property="og:description" content="3月要入职了，有点小激动。">
+<meta property="og:description" content="切片比数组的方便之处在于其长度可变，在append超出cap时可自动扩容，一次性扩充大小和具体情况有关，我测试的结果是每次扩容先×2，还不够则再线性增长 关于slice有两个注意点 slice的初始化问题12var arr = []int &amp;#123;0, 1, 2, 3, 4, 5, 6&amp;#125;s1 := arr[0, 4] 注意这里s1初始化后为0, 1, 2, 3slice这种方式初始化">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-02-28T17:46:02.283Z">
+<meta property="og:updated_time" content="2020-03-06T16:08:35.976Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深夜有感">
-<meta name="twitter:description" content="3月要入职了，有点小激动。">
+<meta name="twitter:title" content="Golang: slice切片的坑">
+<meta name="twitter:description" content="切片比数组的方便之处在于其长度可变，在append超出cap时可自动扩容，一次性扩充大小和具体情况有关，我测试的结果是每次扩容先×2，还不够则再线性增长 关于slice有两个注意点 slice的初始化问题12var arr = []int &amp;#123;0, 1, 2, 3, 4, 5, 6&amp;#125;s1 := arr[0, 4] 注意这里s1初始化后为0, 1, 2, 3slice这种方式初始化">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/02/29/深夜有感/">
+  <link rel="canonical" href="http://yoursite.com/2020/03/06/Golang-slice切片的坑/">
 
 
 
 
 
-  <title>深夜有感 | yyy's Blog</title>
+  <title>Golang: slice切片的坑 | yyy's Blog</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/29/深夜有感/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/06/Golang-slice切片的坑/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YYY">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">深夜有感</h1>
+          <h1 class="post-title" itemprop="name headline">Golang: slice切片的坑</h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-29T01:43:03+08:00">
-                2020-02-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-06T23:53:37+08:00">
+                2020-03-06
               </time>
             
 
@@ -300,7 +300,14 @@
       
 
       
-        <p>3月要入职了，有点小激动。</p>
+        <p>切片比数组的方便之处在于其长度可变，在append超出cap时可自动扩容，一次性扩充大小和具体情况有关，我测试的结果是每次扩容先×2，还不够则再线性增长</p>
+<p>关于slice有两个注意点</p>
+<h5 id="slice的初始化问题"><a href="#slice的初始化问题" class="headerlink" title="slice的初始化问题"></a>slice的初始化问题</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = []<span class="keyword">int</span> &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;</span><br><span class="line">s1 := arr[<span class="number">0</span>, <span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+<p>注意这里s1初始化后为0, 1, 2, 3<br>slice这种方式初始化是左闭右开区间</p>
+<h5 id="slice的拷贝问题"><a href="#slice的拷贝问题" class="headerlink" title="slice的拷贝问题"></a>slice的拷贝问题</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = []<span class="keyword">int</span> &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;</span><br><span class="line">s1 := arr[<span class="number">0</span>, <span class="number">4</span>]</span><br><span class="line">s2 := arr[<span class="number">1</span>, <span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+<p>如此初始化相当于一个引用，因此s1, s2存在内存重叠，改动s2会使s1发生改变</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = []<span class="keyword">int</span> &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;</span><br><span class="line">s1 := <span class="built_in">make</span>([]<span class="keyword">int</span>, <span class="number">4</span>) </span><br><span class="line"><span class="built_in">copy</span>(s1, arr[<span class="number">0</span>:<span class="number">4</span>])</span><br><span class="line">s2 := <span class="built_in">make</span>([]<span class="keyword">int</span>, <span class="number">2</span>)</span><br><span class="line"><span class="built_in">copy</span>(s2, arr[<span class="number">1</span>:<span class="number">3</span>])</span><br></pre></td></tr></table></figure>
+<p>若如此，则为内容拷贝，不会发生改一变二的情况</p>
 
       
     </div>
@@ -325,8 +332,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/01/12/毕设2-双目实时稠密重建思路整理/" rel="next" title="毕设2-双目实时稠密重建思路整理">
-                <i class="fa fa-chevron-left"></i> 毕设2-双目实时稠密重建思路整理
+              <a href="/2020/03/04/MacOS的恐怖文件套娃事件/" rel="next" title="MacOS的恐怖文件套娃事件">
+                <i class="fa fa-chevron-left"></i> MacOS的恐怖文件套娃事件
               </a>
             
           </div>
@@ -334,10 +341,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/03/03/Golang-Vscode中的自动修改import问题/" rel="prev" title="Golang: Vscode中的自动修改import问题">
-                Golang: Vscode中的自动修改import问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -389,8 +392,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -448,6 +460,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#slice的初始化问题"><span class="nav-number">1.</span> <span class="nav-text">slice的初始化问题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#slice的拷贝问题"><span class="nav-number">2.</span> <span class="nav-text">slice的拷贝问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
