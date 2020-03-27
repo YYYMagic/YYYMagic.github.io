@@ -233,6 +233,132 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/27/简易流媒体直播平台/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="YYY">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yyy's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/27/简易流媒体直播平台/" itemprop="url">简易流媒体直播平台</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-27T20:15:35+08:00">
+                2020-03-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>工作空(hua)闲(shui)时间搞出了一个非常简单的流媒体直播网站,一起来瞧瞧~<br>快乐点播：<a href="http://47.101.41.7:8080" target="_blank" rel="noopener">请戳这里</a><br>(只支持PC端上几个主流的浏览器，而且记得允许flash)</p>
+<h3 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h3><p>映入眼帘的是清新爽朗的用户界面(滑稽)<br><img src="https://s1.ax1x.com/2020/03/27/GiJk8g.png" alt=""></p>
+<p>随意点进去，就可以观看直播啦<br><img src="https://s1.ax1x.com/2020/03/27/GiJrxH.png" alt=""></p>
+<h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h3><p>代码实际上非常简单，使用js拉取公共直播流，不需要自己推流，所以这不都是一个流媒体服务器而是一个客户端<br>js中的核心代码是这样的<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">id</span>=<span class="string">"my-player"</span> <span class="attr">class</span>=<span class="string">"video-js vjs-default-skin vjs-big-play-centered"</span> <span class="attr">controls</span> <span class="attr">preload</span>=<span class="string">"auto"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">autoplay</span>=<span class="string">"autoplay"</span> <span class="attr">poster</span>=<span class="string">"//vjs.zencdn.net/v/oceans.png"</span> <span class="attr">width</span>=<span class="string">"960"</span> <span class="attr">height</span>=<span class="string">"540"</span> <span class="attr">data-setup</span>=<span class="string">'&#123;&#125;'</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8"</span> <span class="attr">type</span>=<span class="string">"application/x-mpegURL"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>通过给src一个url来拉流，目前测试了hlv格式和rmtp格式，有一个问题是其中一个封装格式在使用go模板类替换src时会出现视频黑屏的情况，这个后续再考虑一下解决办法</p>
+<p>后面两个链接是视频点播，原理也是差不多的，只不过通过一个server把本地文件地址转成url再传给src即可，当然线上环境需要使用对象存储。</p>
+<p>代码已开源，<a href="https://github.com/YYYMagic/videoServer" target="_blank" rel="noopener">戳我看看</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/19/北京站的中央广场/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1388,129 +1514,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/21/失败的OJ考试/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="YYY">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="yyy's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/12/21/失败的OJ考试/" itemprop="url">失败的OJ考试</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-21T21:03:12+08:00">
-                2019-12-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>刚刚考了一场oj考试，3题对1题，还没做完，太辣鸡了！！！！</p>
-<p>之前考PAT的时候我就应该提起注意，OJ一直是弱项，唉。。。</p>
-<p>还是得多练才行</p>
-<p><img src="https://s2.ax1x.com/2019/12/21/QvIptS.jpg" alt=""></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1561,7 +1564,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
