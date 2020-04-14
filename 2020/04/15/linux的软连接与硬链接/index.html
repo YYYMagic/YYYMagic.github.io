@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="软链接创建命令： -s 原文件 软连接```  123456789101. 原文件可以是d(文件夹)  2. 软连接相当于一个文件，就是数据块(block)比较特殊，存放着原文件的路径。  3. 软连接有着新的inode号以及用户数据块4. 原文件删除则软链接的文件内容也被清除ps: 在一个文件系统中，inode是文件索引的唯一标识# 硬链接创建命令： ```ln 原文件 硬链接  原文件不可以是">
+<meta name="description" content="软链接创建命令： ln -s 原文件 软连接  原文件可以是d(文件夹)   软连接相当于一个文件，就是数据块(block)比较特殊，存放着原文件的路径。   软连接有着新的inode号以及用户数据块 原文件删除则软链接的文件内容也被清除  ps: 在一个文件系统中，inode是文件索引的唯一标识 硬链接创建命令： ln 原文件 硬链接  原文件不可以是d，因为. 和 ..也是硬链接，创建文件硬链">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux的软连接与硬链接">
 <meta property="og:url" content="http://yoursite.com/2020/04/15/linux的软连接与硬链接/index.html">
 <meta property="og:site_name" content="yyy&#39;s Blog">
-<meta property="og:description" content="软链接创建命令： -s 原文件 软连接```  123456789101. 原文件可以是d(文件夹)  2. 软连接相当于一个文件，就是数据块(block)比较特殊，存放着原文件的路径。  3. 软连接有着新的inode号以及用户数据块4. 原文件删除则软链接的文件内容也被清除ps: 在一个文件系统中，inode是文件索引的唯一标识# 硬链接创建命令： ```ln 原文件 硬链接  原文件不可以是">
+<meta property="og:description" content="软链接创建命令： ln -s 原文件 软连接  原文件可以是d(文件夹)   软连接相当于一个文件，就是数据块(block)比较特殊，存放着原文件的路径。   软连接有着新的inode号以及用户数据块 原文件删除则软链接的文件内容也被清除  ps: 在一个文件系统中，inode是文件索引的唯一标识 硬链接创建命令： ln 原文件 硬链接  原文件不可以是d，因为. 和 ..也是硬链接，创建文件硬链">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://s1.ax1x.com/2020/04/15/JpHEoF.jpg">
-<meta property="og:updated_time" content="2020-04-14T16:59:17.489Z">
+<meta property="og:updated_time" content="2020-04-14T17:01:43.864Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux的软连接与硬链接">
-<meta name="twitter:description" content="软链接创建命令： -s 原文件 软连接```  123456789101. 原文件可以是d(文件夹)  2. 软连接相当于一个文件，就是数据块(block)比较特殊，存放着原文件的路径。  3. 软连接有着新的inode号以及用户数据块4. 原文件删除则软链接的文件内容也被清除ps: 在一个文件系统中，inode是文件索引的唯一标识# 硬链接创建命令： ```ln 原文件 硬链接  原文件不可以是">
+<meta name="twitter:description" content="软链接创建命令： ln -s 原文件 软连接  原文件可以是d(文件夹)   软连接相当于一个文件，就是数据块(block)比较特殊，存放着原文件的路径。   软连接有着新的inode号以及用户数据块 原文件删除则软链接的文件内容也被清除  ps: 在一个文件系统中，inode是文件索引的唯一标识 硬链接创建命令： ln 原文件 硬链接  原文件不可以是d，因为. 和 ..也是硬链接，创建文件硬链">
 <meta name="twitter:image" content="https://s1.ax1x.com/2020/04/15/JpHEoF.jpg">
 
 
@@ -302,7 +302,15 @@
       
 
       
-        <h1 id="软链接"><a href="#软链接" class="headerlink" title="软链接"></a>软链接</h1><p>创建命令： <figure class="highlight plain"><figcaption><span>-s 原文件 软连接```  </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1. 原文件可以是d(文件夹)  </span><br><span class="line">2. 软连接相当于一个文件，就是数据块(block)比较特殊，存放着原文件的路径。  </span><br><span class="line">3. 软连接有着新的inode号以及用户数据块</span><br><span class="line">4. 原文件删除则软链接的文件内容也被清除</span><br><span class="line"></span><br><span class="line">ps: 在一个文件系统中，inode是文件索引的唯一标识</span><br><span class="line"></span><br><span class="line"># 硬链接</span><br><span class="line">创建命令： ```ln 原文件 硬链接</span><br></pre></td></tr></table></figure></p>
+        <h1 id="软链接"><a href="#软链接" class="headerlink" title="软链接"></a>软链接</h1><p>创建命令： <code>ln -s 原文件 软连接</code></p>
+<ol>
+<li>原文件可以是d(文件夹)  </li>
+<li>软连接相当于一个文件，就是数据块(block)比较特殊，存放着原文件的路径。  </li>
+<li>软连接有着新的inode号以及用户数据块</li>
+<li>原文件删除则软链接的文件内容也被清除</li>
+</ol>
+<p>ps: 在一个文件系统中，inode是文件索引的唯一标识</p>
+<h1 id="硬链接"><a href="#硬链接" class="headerlink" title="硬链接"></a>硬链接</h1><p>创建命令： <code>ln 原文件 硬链接</code></p>
 <ol>
 <li>原文件不可以是d，因为. 和 ..也是硬链接，创建文件硬链接会造成循环嵌套</li>
 <li>硬链接与原文件具有相同的inode号</li>
@@ -471,7 +479,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#软链接"><span class="nav-number">1.</span> <span class="nav-text">软链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#find查询"><span class="nav-number">2.</span> <span class="nav-text">find查询</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#软链接"><span class="nav-number">1.</span> <span class="nav-text">软链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#硬链接"><span class="nav-number">2.</span> <span class="nav-text">硬链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#find查询"><span class="nav-number">3.</span> <span class="nav-text">find查询</span></a></li></ol></div>
             
 
           </div>
