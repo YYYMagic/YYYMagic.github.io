@@ -7,8 +7,8 @@ title:
 author: 博主
 
 menu:
-  home: 首页
-  archives: 归档
+  home: 首页通知书
+  archives: 时光机器
   categories: 分类
   tags: 标签
   about: 关于
@@ -46,8 +46,8 @@ page:
   tags: 标签
 
 footer:
-  powered: "由 %s 强力驱动"
-  theme: 主题
+  powered: "感谢 %s 提供支持"
+  theme: 感谢主题
 
 counter:
   tag_cloud:

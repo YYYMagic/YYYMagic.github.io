@@ -27,8 +27,8 @@ override: false
 # For example, you put your favicons into `hexo-site/source/images` directory.
 # Then need to rename & redefine they on any other names, otherwise icons from Next will rewrite your custom icons in Hexo.
 favicon:
-  small: /images/favicon-16x16-next.png
-  medium: /images/favicon-32x32-next.png
+  small: /images/peach-16.png
+  medium: /images/peach-32.png
   apple_touch_icon: /images/apple-touch-icon-next.png
   safari_pinned_tab: /images/logo.svg
   #android_manifest: /images/manifest.json
@@ -138,16 +138,13 @@ social:
   #YouTube: https://youtube.com/yourname || youtube
   #Instagram: https://instagram.com/yourname || instagram
   #Skype: skype:yourname?call|chat || skype
-  知乎: https://www.zhihu.com/people/yang-yu-yao-94-61/activities
-  微博: https://weibo.com/6108944242/profile?topnav=1&wvr=6&is_all=1
+  知乎: https://www.zhihu.com/people/yang-yu-yao-94-61/activities || globe
+  微博: https://weibo.com/6108944242/profile?topnav=1&wvr=6&is_all=1 || weibo
 
 social_icons:
   enable: true
   icons_only: false
   transition: false
-
-  知乎: zhihu
-  微博: weibo
 
 
 
@@ -162,7 +159,7 @@ links_layout: block
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
 # in site  directory(source/uploads): /uploads/avatar.gif
-#avatar: /images/avatar.gif
+avatar: https://s1.ax1x.com/2020/09/30/0mwDTf.jpg
 
 # Table Of Contents in the Sidebar
 toc:
