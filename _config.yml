@@ -81,6 +81,8 @@ deploy:
   type: git
   repo: https://YYYMagic:2gxhlmcl@github.com/YYYMagic/YYYMagic.github.io.git
   branch: master
+  name: YYYMagic
+  email: y980715@gmail.com
 
 # Live2D
 ## https://github.com/EYHN/hexo-helper-live2d
