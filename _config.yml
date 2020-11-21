@@ -98,3 +98,10 @@ live2d:
   mobile:
     show: true
 
+# Security
+encrypt: # hexo-blog-encrypt
+  abstract: 这一篇是秘密喔.
+  message: 点击这里输入密码后才能查看喔.
+  template: <div id="hexo-blog-encrypt" data-wpm="{{hbeWrongPassMessage}}" data-whm="{{hbeWrongHashMessage}}"><div class="hbe-input-container"><input type="password" id="hbePass" placeholder="{{hbeMessage}}" /><label>{{hbeMessage}}</label><div class="bottom-line"></div></div><script id="hbeData" type="hbeData" data-hmacdigest="{{hbeHmacDigest}}">{{hbeEncryptedData}}</script></div>
+  wrong_pass_message: 咦，这个密码不太对呢
+  wrong_hash_message: 抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.
