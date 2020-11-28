@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 你能来真的太好了
+title: Not Found
 subtitle:
-description: 虽然没能触碰黑白琴键，如今手指在键盘上飞舞，依然觉得很幸福。
+description: Exception in thread "main" java.lang.NullPointerException
 keywords:
 author: YYY
 language: zh-CN
