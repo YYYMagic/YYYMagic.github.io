@@ -79,7 +79,7 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://YYYMagic:2gxhlmcl@github.com/YYYMagic/YYYMagic.github.io.git
+  repo: https://github.com/YYYMagic/YYYMagic.github.io
   branch: master
   name: YYYMagic
   email: y980715@gmail.com
