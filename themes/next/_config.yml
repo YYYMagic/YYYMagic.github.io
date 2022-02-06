@@ -162,9 +162,9 @@ sidebar:
 # Sidebar Avatar
 avatar:
   # Replace the default image and set the url here.
-  url: https://s3.ax1x.com/2020/11/28/DyPdVU.jpg
+  url: https://s4.ax1x.com/2022/02/06/HuQYNQ.jpg
   # If true, the avatar will be dispalyed in circle.
-  rounded: true
+  rounded: false
   # If true, the avatar will be rotated with the cursor.
   rotated: true
 
@@ -176,22 +176,22 @@ site_state: true
 # Key is the link label showing to end users.
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
-  #GitHub: https://github.com/yourname || fab fa-github
+  GitHub: https://github.com/YYYMagic || fab fa-github
   #E-Mail: mailto:yourname@gmail.com || fa fa-envelope
   #Weibo: https://weibo.com/yourname || fab fa-weibo
   #Google: https://plus.google.com/yourname || fab fa-google
-  #Twitter: https://twitter.com/yourname || fab fa-twitter
+  Twitter: https://twitter.com/yyymagic_ || fab fa-twitter
   #FB Page: https://www.facebook.com/yourname || fab fa-facebook
   #StackOverflow: https://stackoverflow.com/yourname || fab fa-stack-overflow
   #YouTube: https://youtube.com/yourname || fab fa-youtube
   #Instagram: https://instagram.com/yourname || fab fa-instagram
   #Skype: skype:yourname?call|chat || fab fa-skype
-  知乎: https://www.zhihu.com/people/yang-yu-yao-94-61/activities || zhihu
-  微博: https://weibo.com/6108944242/profile?topnav=1&wvr=6&is_all=1 || weibo
+  知乎: https://www.zhihu.com/people/yang-yu-yao-94-61/activities || fab fa-zhihu
+  # 微博: https://weibo.com/6108944242/profile?topnav=1&wvr=6&is_all=1 || weibo
 
 social_icons:
   enable: true
-  icons_only: false
+  icons_only: true
   transition: false
 
 # Blog rolls
