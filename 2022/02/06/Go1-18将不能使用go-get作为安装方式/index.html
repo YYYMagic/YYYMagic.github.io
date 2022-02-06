@@ -20,19 +20,19 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="写在前面第三天 今天早回来了一会儿作为放松 进度记录听力： TPO37 4篇阅读： TPO38 2篇， TPO37 1篇单词： 21 知识记录whereas：表对比，一般与while可互换 as though：仿佛，好像 opponent：对手，反对者 proponent：支持者advocator：支持者 refreshmet有茶点，点心的意思 scenario：情节，剧本 sustainable">
+  <meta name="description" content="go getGo1.17中， go get不加-d选项是不推荐的，-d的意思是只修改 go.mod 的内容而不会将包下载下来，这样可以避免下载耗时太长，也可以减少无用的包下载；到Go1.18，-d选项是默认的，也就是go get将无法用于下载包的编译文件https:&#x2F;&#x2F;go.dev&#x2F;doc&#x2F;go-get-install-deprecation  Starting in Go 1.17, insta">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TOEFL-3">
-<meta property="og:url" content="http://yoursite.com/2019/07/17/TOEFL-3/index.html">
+<meta property="og:title" content="Go 1.17 的一些小变化">
+<meta property="og:url" content="http://yoursite.com/2022/02/06/Go1-18%E5%B0%86%E4%B8%8D%E8%83%BD%E4%BD%BF%E7%94%A8go-get%E4%BD%9C%E4%B8%BA%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Not Found">
-<meta property="og:description" content="写在前面第三天 今天早回来了一会儿作为放松 进度记录听力： TPO37 4篇阅读： TPO38 2篇， TPO37 1篇单词： 21 知识记录whereas：表对比，一般与while可互换 as though：仿佛，好像 opponent：对手，反对者 proponent：支持者advocator：支持者 refreshmet有茶点，点心的意思 scenario：情节，剧本 sustainable">
+<meta property="og:description" content="go getGo1.17中， go get不加-d选项是不推荐的，-d的意思是只修改 go.mod 的内容而不会将包下载下来，这样可以避免下载耗时太长，也可以减少无用的包下载；到Go1.18，-d选项是默认的，也就是go get将无法用于下载包的编译文件https:&#x2F;&#x2F;go.dev&#x2F;doc&#x2F;go-get-install-deprecation  Starting in Go 1.17, insta">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2019-07-17T11:54:25.000Z">
-<meta property="article:modified_time" content="2022-02-05T13:13:40.625Z">
+<meta property="article:published_time" content="2022-02-06T14:58:57.000Z">
+<meta property="article:modified_time" content="2022-02-06T15:23:28.815Z">
 <meta property="article:author" content="YYY">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2019/07/17/TOEFL-3/">
+<link rel="canonical" href="http://yoursite.com/2022/02/06/Go1-18%E5%B0%86%E4%B8%8D%E8%83%BD%E4%BD%BF%E7%94%A8go-get%E4%BD%9C%E4%B8%BA%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>TOEFL-3 | Not Found</title>
+  <title>Go 1.17 的一些小变化 | Not Found</title>
   
 
 
@@ -150,7 +150,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/17/TOEFL-3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/02/06/Go1-18%E5%B0%86%E4%B8%8D%E8%83%BD%E4%BD%BF%E7%94%A8go-get%E4%BD%9C%E4%B8%BA%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s4.ax1x.com/2022/02/06/HuQYNQ.jpg">
@@ -163,7 +163,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          TOEFL-3
+          Go 1.17 的一些小变化
         </h1>
 
         <div class="post-meta">
@@ -172,16 +172,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2019-07-17 19:54:25" itemprop="dateCreated datePublished" datetime="2019-07-17T19:54:25+08:00">2019-07-17</time>
+              <time title="创建时间：2022-02-06 22:58:57 / 修改时间：23:23:28" itemprop="dateCreated datePublished" datetime="2022-02-06T22:58:57+08:00">2022-02-06</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-02-05 21:13:40" itemprop="dateModified" datetime="2022-02-05T21:13:40+08:00">2022-02-05</time>
-              </span>
 
           
 
@@ -194,15 +188,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>第三天 今天早回来了一会儿作为放松</p>
-<h1 id="进度记录"><a href="#进度记录" class="headerlink" title="进度记录"></a>进度记录</h1><p>听力： TPO37 4篇<br>阅读： TPO38 2篇， TPO37 1篇<br>单词： 21</p>
-<h1 id="知识记录"><a href="#知识记录" class="headerlink" title="知识记录"></a>知识记录</h1><p>whereas：表对比，一般与while可互换</p>
-<p>as though：仿佛，好像</p>
-<p>opponent：对手，反对者</p>
-<p>proponent：支持者<br>advocator：支持者</p>
-<p>refreshmet有茶点，点心的意思</p>
-<p>scenario：情节，剧本</p>
-<p>sustainable：可持续发展的</p>
+        <h2 id="go-get"><a href="#go-get" class="headerlink" title="go get"></a>go get</h2><p>Go1.17中， <code>go get</code>不加<code>-d</code>选项是不推荐的，<code>-d</code>的意思是只修改 go.mod 的内容而不会将包下载下来，这样可以避免下载耗时太长，也可以减少无用的包下载；到Go1.18，<code>-d</code>选项是默认的，也就是<code>go get</code>将无法用于下载包的编译文件<br><a target="_blank" rel="noopener" href="https://go.dev/doc/go-get-install-deprecation">https://go.dev/doc/go-get-install-deprecation</a></p>
+<blockquote>
+<p>Starting in Go 1.17, installing executables with go get is deprecated. go install may be used instead.<br>In Go 1.18, go get will no longer build packages; it will only be used to add, update, or remove dependencies in go.mod. Specifically, go get will always act as if the -d flag were enabled.</p>
+</blockquote>
+<p>以前用<code>go get xxx</code>现在变成<code>go install xxx@version</code></p>
+<h2 id="Lazy-module-loading"><a href="#Lazy-module-loading" class="headerlink" title="Lazy module loading"></a>Lazy module loading</h2><p>Go1.17的Go Command使用Module的懒加载模式<a target="_blank" rel="noopener" href="https://go.dev/ref/mod#lazy-loading">Lazy module loading
+</a>来下载module。也就是如果go.mod的requires包涵盖了所有import packages，就不会加载module graph，否则再按需加载</p>
 
     </div>
 
@@ -218,13 +210,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/07/16/TOEFL-2/" rel="prev" title="TOEFL-2">
-      <i class="fa fa-chevron-left"></i> TOEFL-2
+    <a href="/2022/02/06/Reference-of-Go-Modules/" rel="prev" title="Reference of Go Modules">
+      <i class="fa fa-chevron-left"></i> Reference of Go Modules
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2019/12/16/welcome/" rel="next" title="welcome">
-      welcome <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -283,7 +272,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9B%E5%BA%A6%E8%AE%B0%E5%BD%95"><span class="nav-number">2.</span> <span class="nav-text">进度记录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9F%A5%E8%AF%86%E8%AE%B0%E5%BD%95"><span class="nav-number">3.</span> <span class="nav-text">知识记录</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#go-get"><span class="nav-number">1.</span> <span class="nav-text">go get</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lazy-module-loading"><span class="nav-number">2.</span> <span class="nav-text">Lazy module loading</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
