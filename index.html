@@ -172,7 +172,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-02-06 22:58:57 / 修改时间：23:23:28" itemprop="dateCreated datePublished" datetime="2022-02-06T22:58:57+08:00">2022-02-06</time>
+              <time title="创建时间：2022-02-06 22:58:57 / 修改时间：23:27:26" itemprop="dateCreated datePublished" datetime="2022-02-06T22:58:57+08:00">2022-02-06</time>
             </span>
 
           
@@ -186,7 +186,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="go-get"><a href="#go-get" class="headerlink" title="go get"></a>go get</h2><p>Go1.17中， <code>go get</code>不加<code>-d</code>选项是不推荐的，<code>-d</code>的意思是只修改 go.mod 的内容而不会将包下载下来，这样可以避免下载耗时太长，也可以减少无用的包下载；到Go1.18，<code>-d</code>选项是默认的，也就是<code>go get</code>将无法用于下载包的编译文件<br><a target="_blank" rel="noopener" href="https://go.dev/doc/go-get-install-deprecation">https://go.dev/doc/go-get-install-deprecation</a></p>
+          <h2 id="go-get"><a href="#go-get" class="headerlink" title="go get"></a>go get</h2><p>Go1.17中， <code>go get</code>不加<code>-d</code>选项是不推荐的，<code>-d</code>的意思是只修改 go.mod 的内容而不会将包下载下来，这样可以避免下载耗时太长，也可以减少无用的包下载；Go1.18中，<code>-d</code>选项是默认的，也就是<code>go get</code>将无法用于下载包的编译文件<br><a target="_blank" rel="noopener" href="https://go.dev/doc/go-get-install-deprecation">https://go.dev/doc/go-get-install-deprecation</a></p>
 <blockquote>
 <p>Starting in Go 1.17, installing executables with go get is deprecated. go install may be used instead.<br>In Go 1.18, go get will no longer build packages; it will only be used to add, update, or remove dependencies in go.mod. Specifically, go get will always act as if the -d flag were enabled.</p>
 </blockquote>
