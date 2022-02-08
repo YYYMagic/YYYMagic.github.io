@@ -14,3 +14,8 @@ https://go.dev/doc/go-get-install-deprecation
 ## Lazy module loading
 Go1.17的Go Command使用Module的懒加载模式[Lazy module loading
 ](https://go.dev/ref/mod#lazy-loading)来下载module。也就是如果go.mod的requires包涵盖了所有import packages，就不会加载module graph，否则再按需加载
+
+## go build标签
+`//go:build` 现在用来指定平台编译，比如只能在linux或者OS X编译： `//go:build linux || darwin`
+而在之前采用的标签是 `// +build`
+gofmt命令可以在遇到旧标签的时候添加一个等价的新标签
