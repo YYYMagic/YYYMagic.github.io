@@ -147,7 +147,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/02/06/Go1-18%E5%B0%86%E4%B8%8D%E8%83%BD%E4%BD%BF%E7%94%A8go-get%E4%BD%9C%E4%B8%BA%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/02/08/command/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s4.ax1x.com/2022/02/06/HuQYNQ.jpg">
@@ -161,7 +161,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/02/06/Go1-18%E5%B0%86%E4%B8%8D%E8%83%BD%E4%BD%BF%E7%94%A8go-get%E4%BD%9C%E4%B8%BA%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F/" class="post-title-link" itemprop="url">Go 1.17 的一些小变化</a>
+            <a href="/2022/02/08/command/" class="post-title-link" itemprop="url">一些常用的go command</a>
         </h2>
 
         <div class="post-meta">
@@ -172,8 +172,87 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-02-06 22:58:57 / 修改时间：23:27:26" itemprop="dateCreated datePublished" datetime="2022-02-06T22:58:57+08:00">2022-02-06</time>
+              <time title="创建时间：2022-02-08 22:54:37 / 修改时间：23:13:52" itemprop="dateCreated datePublished" datetime="2022-02-08T22:54:37+08:00">2022-02-08</time>
             </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>more: <a target="_blank" rel="noopener" href="https://pkg.go.dev/cmd">https://pkg.go.dev/cmd</a></p>
+<h3 id="go-build"><a href="#go-build" class="headerlink" title="go build"></a>go build</h3><p>特别地，文件最上方加入 build tags 可以指定编译的平台</p>
+<p><code>//go:build</code>  ≥ Go1.17 </p>
+<p><code>// +build</code>  ≤ Go1.16 时使用</p>
+<p><code>//go:build ignore</code> 表示编译时需要忽略</p>
+<p>也可以采用文件名为 <code>*_GOOS_GOARCH</code> 的形式(source_windows_amd64.go)来限定文件制定的编译平台</p>
+<h3 id="go-list"><a href="#go-list" class="headerlink" title="go list"></a>go list</h3><p><code>go list -m all</code> 列出所有依赖</p>
+<p><code>go list -m -u all</code> 列出所有依赖以及其当前最新版本</p>
+<p><code>go list -m -versions xx</code> 列出xx包的所有版本</p>
+<h3 id="go-get"><a href="#go-get" class="headerlink" title="go get"></a>go get</h3><p><code>go get -d xx</code> 更新xx的版本</p>
+<p><code>go get -d -u ./...</code> 更新所有直接/简介依赖的modules的版本</p>
+<p><code>go get -d xx@vx.x.x</code> 更新某个包到指定版本</p>
+<p>ps: Go1.18 默认隐式携带<code>-d</code>, 不会下载包，只会更新go.mod文件</p>
+<h3 id="go-install"><a href="#go-install" class="headerlink" title="go install"></a>go install</h3><p><code>go install xx@version</code>  下载某个program的指定版本</p>
+<h3 id="go-mod"><a href="#go-mod" class="headerlink" title="go mod"></a>go mod</h3><p><code>go mod tidy</code> 删除go.mod中的无用包</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/02/06/Go1.17%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E5%8F%98%E5%8C%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s4.ax1x.com/2022/02/06/HuQYNQ.jpg">
+      <meta itemprop="name" content="YYY">
+      <meta itemprop="description" content="Exception in thread "main" java.lang.NullPointerException">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Not Found">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/06/Go1.17%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E5%8F%98%E5%8C%96/" class="post-title-link" itemprop="url">Go 1.17 的一些小变化</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-02-06 22:58:57" itemprop="dateCreated datePublished" datetime="2022-02-06T22:58:57+08:00">2022-02-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-02-08 23:03:29" itemprop="dateModified" datetime="2022-02-08T23:03:29+08:00">2022-02-08</time>
+              </span>
 
           
 
@@ -193,6 +272,13 @@
 <p>以前用<code>go get xxx</code>现在变成<code>go install xxx@version</code></p>
 <h2 id="Lazy-module-loading"><a href="#Lazy-module-loading" class="headerlink" title="Lazy module loading"></a>Lazy module loading</h2><p>Go1.17的Go Command使用Module的懒加载模式<a target="_blank" rel="noopener" href="https://go.dev/ref/mod#lazy-loading">Lazy module loading
 </a>来下载module。也就是如果go.mod的requires包涵盖了所有import packages，就不会加载module graph，否则再按需加载</p>
+<h2 id="go-build标签"><a href="#go-build标签" class="headerlink" title="go build标签"></a>go build标签</h2><p>Go1.17及之后用来指定编译平台的标签是<code>//go:build</code>，新标签的语法与Go的逻辑语法相同，比如限定在linux或者OS X编译： <code>//go:build linux || darwin</code><br>而在Go1.16及之前采用的标签是 <code>// +build</code>, 旧标签的语法为</p>
+<ul>
+<li>空格表示OR</li>
+<li>逗号表示AND</li>
+<li>!表示NOT</li>
+</ul>
+<p>比如限定只能在linux或者OS X编译： <code>// +build linux darwin</code><br>gofmt命令可以在遇到旧标签的时候添加一个等价的新标签</p>
 
       
     </div>
@@ -235,10 +321,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-02-06 09:31:09 / 修改时间：09:31:52" itemprop="dateCreated datePublished" datetime="2022-02-06T09:31:09+08:00">2022-02-06</time>
+              <time title="创建时间：2022-02-06 09:31:09" itemprop="dateCreated datePublished" datetime="2022-02-06T09:31:09+08:00">2022-02-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-02-08 23:16:36" itemprop="dateModified" datetime="2022-02-08T23:16:36+08:00">2022-02-08</time>
+              </span>
 
           
 
@@ -252,6 +344,10 @@
 
       
           <h1 id="Reference-of-Go-Modules"><a href="#Reference-of-Go-Modules" class="headerlink" title="Reference of Go Modules"></a>Reference of Go Modules</h1><p>Go Modules Reference <a target="_blank" rel="noopener" href="https://go.dev/ref/mod">https://go.dev/ref/mod</a><br>Go Modules Tutorial <a target="_blank" rel="noopener" href="https://go.dev/blog/using-go-modules">https://go.dev/blog/using-go-modules</a><br>Dependency Problem by Russ cox <a target="_blank" rel="noopener" href="https://research.swtch.com/deps">https://research.swtch.com/deps</a></p>
+<h1 id="note"><a href="#note" class="headerlink" title="note"></a>note</h1><p>go.mod中的go行指明了期望版本，编译器在遇到大于期望版本的新特性时会报错，比如要求</p>
+<p><code>go 1.15</code></p>
+<p>那么编译的代码中有Go1.16新特性<code>//go:embed</code>时会提示错误</p>
+<p>尽量使得go.mod要求版本和实际编译版本一致</p>
 
       
     </div>
@@ -780,71 +876,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/02/07/%E6%98%A5%E8%8A%82%E5%BF%AB%E4%B9%90/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://s4.ax1x.com/2022/02/06/HuQYNQ.jpg">
-      <meta itemprop="name" content="YYY">
-      <meta itemprop="description" content="Exception in thread "main" java.lang.NullPointerException">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Not Found">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/07/%E6%98%A5%E8%8A%82%E5%BF%AB%E4%B9%90/" class="post-title-link" itemprop="url">春节快乐</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-02-07 09:58:25" itemprop="dateCreated datePublished" datetime="2021-02-07T09:58:25+08:00">2021-02-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-02-05 21:13:40" itemprop="dateModified" datetime="2022-02-05T21:13:40+08:00">2022-02-05</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>新年快到来了，祝愿一切安好。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -916,7 +947,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">30</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

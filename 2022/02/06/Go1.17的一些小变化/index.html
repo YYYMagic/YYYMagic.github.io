@@ -20,19 +20,19 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="新年快到来了，祝愿一切安好。">
+  <meta name="description" content="go getGo1.17中， go get不加-d选项是不推荐的，-d的意思是只修改 go.mod 的内容而不会将包下载下来，这样可以避免下载耗时太长，也可以减少无用的包下载；Go1.18中，-d选项是默认的，也就是go get将无法用于下载包的编译文件https:&#x2F;&#x2F;go.dev&#x2F;doc&#x2F;go-get-install-deprecation  Starting in Go 1.17, insta">
 <meta property="og:type" content="article">
-<meta property="og:title" content="春节快乐">
-<meta property="og:url" content="http://yoursite.com/2021/02/07/%E6%98%A5%E8%8A%82%E5%BF%AB%E4%B9%90/index.html">
+<meta property="og:title" content="Go 1.17 的一些小变化">
+<meta property="og:url" content="http://yoursite.com/2022/02/06/Go1.17%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E5%8F%98%E5%8C%96/index.html">
 <meta property="og:site_name" content="Not Found">
-<meta property="og:description" content="新年快到来了，祝愿一切安好。">
+<meta property="og:description" content="go getGo1.17中， go get不加-d选项是不推荐的，-d的意思是只修改 go.mod 的内容而不会将包下载下来，这样可以避免下载耗时太长，也可以减少无用的包下载；Go1.18中，-d选项是默认的，也就是go get将无法用于下载包的编译文件https:&#x2F;&#x2F;go.dev&#x2F;doc&#x2F;go-get-install-deprecation  Starting in Go 1.17, insta">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-02-07T01:58:25.000Z">
-<meta property="article:modified_time" content="2022-02-05T13:13:40.626Z">
+<meta property="article:published_time" content="2022-02-06T14:58:57.000Z">
+<meta property="article:modified_time" content="2022-02-08T15:03:29.151Z">
 <meta property="article:author" content="YYY">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2021/02/07/%E6%98%A5%E8%8A%82%E5%BF%AB%E4%B9%90/">
+<link rel="canonical" href="http://yoursite.com/2022/02/06/Go1.17%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E5%8F%98%E5%8C%96/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>春节快乐 | Not Found</title>
+  <title>Go 1.17 的一些小变化 | Not Found</title>
   
 
 
@@ -150,7 +150,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/02/07/%E6%98%A5%E8%8A%82%E5%BF%AB%E4%B9%90/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/02/06/Go1.17%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E5%8F%98%E5%8C%96/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s4.ax1x.com/2022/02/06/HuQYNQ.jpg">
@@ -163,7 +163,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          春节快乐
+          Go 1.17 的一些小变化
         </h1>
 
         <div class="post-meta">
@@ -173,14 +173,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-02-07 09:58:25" itemprop="dateCreated datePublished" datetime="2021-02-07T09:58:25+08:00">2021-02-07</time>
+              <time title="创建时间：2022-02-06 22:58:57" itemprop="dateCreated datePublished" datetime="2022-02-06T22:58:57+08:00">2022-02-06</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-02-05 21:13:40" itemprop="dateModified" datetime="2022-02-05T21:13:40+08:00">2022-02-05</time>
+                <time title="修改时间：2022-02-08 23:03:29" itemprop="dateModified" datetime="2022-02-08T23:03:29+08:00">2022-02-08</time>
               </span>
 
           
@@ -194,7 +194,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>新年快到来了，祝愿一切安好。</p>
+        <h2 id="go-get"><a href="#go-get" class="headerlink" title="go get"></a>go get</h2><p>Go1.17中， <code>go get</code>不加<code>-d</code>选项是不推荐的，<code>-d</code>的意思是只修改 go.mod 的内容而不会将包下载下来，这样可以避免下载耗时太长，也可以减少无用的包下载；Go1.18中，<code>-d</code>选项是默认的，也就是<code>go get</code>将无法用于下载包的编译文件<br><a target="_blank" rel="noopener" href="https://go.dev/doc/go-get-install-deprecation">https://go.dev/doc/go-get-install-deprecation</a></p>
+<blockquote>
+<p>Starting in Go 1.17, installing executables with go get is deprecated. go install may be used instead.<br>In Go 1.18, go get will no longer build packages; it will only be used to add, update, or remove dependencies in go.mod. Specifically, go get will always act as if the -d flag were enabled.</p>
+</blockquote>
+<p>以前用<code>go get xxx</code>现在变成<code>go install xxx@version</code></p>
+<h2 id="Lazy-module-loading"><a href="#Lazy-module-loading" class="headerlink" title="Lazy module loading"></a>Lazy module loading</h2><p>Go1.17的Go Command使用Module的懒加载模式<a target="_blank" rel="noopener" href="https://go.dev/ref/mod#lazy-loading">Lazy module loading
+</a>来下载module。也就是如果go.mod的requires包涵盖了所有import packages，就不会加载module graph，否则再按需加载</p>
+<h2 id="go-build标签"><a href="#go-build标签" class="headerlink" title="go build标签"></a>go build标签</h2><p>Go1.17及之后用来指定编译平台的标签是<code>//go:build</code>，新标签的语法与Go的逻辑语法相同，比如限定在linux或者OS X编译： <code>//go:build linux || darwin</code><br>而在Go1.16及之前采用的标签是 <code>// +build</code>, 旧标签的语法为</p>
+<ul>
+<li>空格表示OR</li>
+<li>逗号表示AND</li>
+<li>!表示NOT</li>
+</ul>
+<p>比如限定只能在linux或者OS X编译： <code>// +build linux darwin</code><br>gofmt命令可以在遇到旧标签的时候添加一个等价的新标签</p>
 
     </div>
 
@@ -210,12 +223,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/11/21/%E5%85%B3%E4%BA%8E%E6%9C%AA%E6%9D%A5%E4%B8%83%E5%B9%B4%E7%9A%84%E9%87%8D%E8%A6%81%E5%86%B3%E8%AE%AE/" rel="prev" title="关于未来七年的重要决议">
-      <i class="fa fa-chevron-left"></i> 关于未来七年的重要决议
+    <a href="/2022/02/06/Reference-of-Go-Modules/" rel="prev" title="Reference of Go Modules">
+      <i class="fa fa-chevron-left"></i> Reference of Go Modules
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/02/07/%E7%BB%84%E6%92%AD%E5%B0%9D%E8%AF%95%E8%AE%B0%E5%BD%95/" rel="next" title="组播尝试记录">
-      组播尝试记录 <i class="fa fa-chevron-right"></i>
+    <a href="/2022/02/08/command/" rel="next" title="一些常用的go command">
+      一些常用的go command <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -275,6 +288,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#go-get"><span class="nav-number">1.</span> <span class="nav-text">go get</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lazy-module-loading"><span class="nav-number">2.</span> <span class="nav-text">Lazy module loading</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#go-build%E6%A0%87%E7%AD%BE"><span class="nav-number">3.</span> <span class="nav-text">go build标签</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
