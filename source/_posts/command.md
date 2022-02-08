@@ -37,3 +37,7 @@ ps: Go1.18 默认隐式携带`-d`, 不会下载包，只会更新go.mod文件
 ### go install
 
 `go install xx@version`  下载某个program的指定版本
+
+### go mod
+
+`go mod tidy` 删除go.mod中的无用包
