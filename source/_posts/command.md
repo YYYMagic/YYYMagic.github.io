@@ -41,3 +41,12 @@ ps: Go1.18 默认隐式携带`-d`, 不会下载包，只会更新go.mod文件
 ### go mod
 
 `go mod tidy` 删除go.mod中的无用包
+
+### go vet
+
+`go vet` 找到文档中的错误之处，不一定十分准确
+
+### go fix
+
+`go tool fix -diff file` 找到旧API并给出建议  
+如果没有 `-diff` 则直接替换文件，或路径下的所有文件
