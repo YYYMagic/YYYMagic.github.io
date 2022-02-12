@@ -147,6 +147,117 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/02/07/%E7%BB%84%E6%92%AD%E5%B0%9D%E8%AF%95%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s4.ax1x.com/2022/02/06/HuQYNQ.jpg">
+      <meta itemprop="name" content="YYY">
+      <meta itemprop="description" content="Exception in thread "main" java.lang.NullPointerException">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Not Found">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/07/%E7%BB%84%E6%92%AD%E5%B0%9D%E8%AF%95%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">组播尝试记录</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-07 13:26:23" itemprop="dateCreated datePublished" datetime="2021-02-07T13:26:23+08:00">2021-02-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-02-05 21:13:40" itemprop="dateModified" datetime="2022-02-05T21:13:40+08:00">2022-02-05</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="webRTC"><a href="#webRTC" class="headerlink" title="webRTC"></a>webRTC</h2><p>运行srs，http-flv拉流，并进行webRTC的流输出。<br>开发机运行srs，本地推rtmp到开发机，同时本地通过webRTC拉流，可以实现。但是webRTC不支持组播，此方案不可行。</p>
+<p>WebRTC目前不能对组播提供支持</p>
+<h2 id="RTSP"><a href="#RTSP" class="headerlink" title="RTSP"></a>RTSP</h2><p>服务端支持RTSP推流有解决方案，客户端是web浏览器</p>
+<ol>
+<li>不支持UDP，进而不支持基于UDP的RTP和RTSP</li>
+<li>不支持插件，插件能接收RTSP流但是主流浏览器已逐渐不再支持插件</li>
+<li>FLASH已不再支持，因此不能采用RTSP转RTMP方案</li>
+</ol>
+<p>候选方案如下</p>
+<ol>
+<li>H5Stream(收费) <a target="_blank" rel="noopener" href="https://www.cnblogs.com/Vince-blogs/p/8608076.html">https://www.cnblogs.com/Vince-blogs/p/8608076.html</a></li>
+<li>html5_rtsp_player + streamedian(收费) <a target="_blank" rel="noopener" href="https://github.com/Streamedian/html5_rtsp_player">https://github.com/Streamedian/html5_rtsp_player</a></li>
+<li>jsmpeg <a target="_blank" rel="noopener" href="https://github.com/phoboslab/jsmpeg">https://github.com/phoboslab/jsmpeg</a></li>
+<li>WebAssembly+ffmpeg demo:<a target="_blank" rel="noopener" href="https://github.com/ringcrl/FFmpeg">https://github.com/ringcrl/FFmpeg</a></li>
+</ol>
+<p>EasyDarwin <a target="_blank" rel="noopener" href="https://github.com/EasyDarwin/EasyDarwin">https://github.com/EasyDarwin/EasyDarwin</a> is awesome!</p>
+<h2 id="RTSP单播验证"><a href="#RTSP单播验证" class="headerlink" title="RTSP单播验证"></a>RTSP单播验证</h2><p>RTSP单播推EasyDarwin，本机ffmpeg配合浏览器拉流</p>
+<p>实验目的：</p>
+<ol>
+<li>验证RTSP推流可实现</li>
+<li>验证RTSP拉流可实现</li>
+<li>验证浏览器的RTSP拉流可实现</li>
+</ol>
+<p>实验过程：</p>
+<ol>
+<li><p>本地ffmpeg推流到服务端EasyDarwin</p>
+<p> ffmpeg -f avfoundation -framerate 30 -video_size 1280x720 -i “0” -rtsp_transport udp -vcodec h264 -f rtsp “rtsp://10.227.22.22/allhands/stream_yuyao”</p>
+</li>
+<li><p>本地运行打开webSocket模块 websocket-relay.js</p>
+<p> node websocket-relay.js supersecret 8081 8082</p>
+</li>
+<li><p>本地运行ffmpeg转码，将rtsp转为websocket</p>
+<p> ffmpeg -i “rtsp://10.227.22.22/allhands/stream_yuyao” -q 0 -f mpegts -codec:v mpeg1video <a target="_blank" rel="noopener" href="http://127.0.0.1:8081/supersecret">http://127.0.0.1:8081/supersecret</a></p>
+</li>
+<li><p>本地打开view-stream.html页面(可以用任意http-server),观察输出<br><img src="https://s3.ax1x.com/2021/02/08/yauiy6.jpg"></p>
+</li>
+</ol>
+<p>实验结论：</p>
+<ol>
+<li>RTSP单播推流可行</li>
+<li>浏览器配合ffmpeg拉RTSP可行</li>
+</ol>
+<h2 id="当前风险点"><a href="#当前风险点" class="headerlink" title="当前风险点"></a>当前风险点</h2><ol>
+<li>浏览器不支持UDP拉流，据大佬将即使用webassembly预编译FFMPEG也不行</li>
+<li>浏览器不支持IGMP协议</li>
+<li>CPU占用、延迟、并发、画面可靠性还未知</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/02/07/%E6%98%A5%E8%8A%82%E5%BF%AB%E4%B9%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -796,82 +907,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/03/Golang-Vscode%E4%B8%AD%E7%9A%84%E8%87%AA%E5%8A%A8%E4%BF%AE%E6%94%B9import%E9%97%AE%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://s4.ax1x.com/2022/02/06/HuQYNQ.jpg">
-      <meta itemprop="name" content="YYY">
-      <meta itemprop="description" content="Exception in thread "main" java.lang.NullPointerException">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Not Found">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/03/Golang-Vscode%E4%B8%AD%E7%9A%84%E8%87%AA%E5%8A%A8%E4%BF%AE%E6%94%B9import%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">Golang: Vscode中的自动修改import问题</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-03 22:19:02" itemprop="dateCreated datePublished" datetime="2020-03-03T22:19:02+08:00">2020-03-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-02-05 21:13:40" itemprop="dateModified" datetime="2022-02-05T21:13:40+08:00">2022-02-05</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>一开始使用vscode编写go程序发现vscode会自动删除我的import</p>
-<p>后来发现是format tool的问题</p>
-<p><img src="https://s2.ax1x.com/2020/03/03/34Hfd1.png"></p>
-<p>设置方法如下：</p>
-<p>format tool改成gofmt就不会出现自动修改import的情况了</p>
-<p>或者format tool使用默认的goreturns，同时打开特定语言选项的go settings 添加<br><code>&quot;editor.formatOnSave&quot;: false</code></p>
-<p>这两种方法都可以取消vscode对golang中import的自动修改</p>
-<p>像我这样的初学者还是不要选择自动修改import比较好…</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -939,7 +978,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">31</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
